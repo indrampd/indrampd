@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 320" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070314"/>
+      <stop offset="50%" stop-color="#0b0a21"/>
+      <stop offset="100%" stop-color="#040616"/>
+    </linearGradient>
+
+    <!-- Neon Glow Gradient -->
+    <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff007f"/>
+      <stop offset="35%" stop-color="#ab3df5"/>
+      <stop offset="70%" stop-color="#00d2ff"/>
+      <stop offset="100%" stop-color="#00f0ff"/>
+    </linearGradient>
+
+    <!-- Glassmorphism Card Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02"/>
+    </linearGradient>
+
+    <!-- Border Glow Filter -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.02" stroke-width="1"/>
+    </pattern>
+
+    <!-- Clip Paths for Typing Animations -->
+    <clipPath id="clip1">
+      <rect x="250" y="160" width="0" height="30">
+        <animate attributeName="width" values="0;225;225;0;0;0;0;0;0;0" keyTimes="0;0.06;0.26;0.30;0.31;0.90;0.91;0.95;0.96;1" dur="15s" repeatCount="indefinite" />
+      </rect>
+    </clipPath>
+    <clipPath id="clip2">
+      <rect x="250" y="160" width="0" height="30">
+        <animate attributeName="width" values="0;0;0;0;240;240;0;0;0;0" keyTimes="0;0.29;0.30;0.33;0.39;0.59;0.63;0.64;0.95;1" dur="15s" repeatCount="indefinite" />
+      </rect>
+    </clipPath>
+    <clipPath id="clip3">
+      <rect x="250" y="160" width="0" height="30">
+        <animate attributeName="width" values="0;0;0;0;0;0;0;190;190;0;0" keyTimes="0;0.29;0.30;0.59;0.60;0.62;0.63;0.69;0.89;0.93;1" dur="15s" repeatCount="indefinite" />
+      </rect>
+    </clipPath>
+  </defs>
+
+  <style>
+    @keyframes borderRotate {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: 1660; }
+    }
+
+    @keyframes textGlow {
+      0%, 100% { filter: drop-shadow(0 0 5px rgba(255, 0, 127, 0.4)) drop-shadow(0 0 10px rgba(0, 240, 255, 0.3)); }
+      50% { filter: drop-shadow(0 0 10px rgba(171, 61, 245, 0.6)) drop-shadow(0 0 20px rgba(0, 240, 255, 0.5)); }
+    }
+
+    @keyframes floating {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(2deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+
+    @keyframes floatOpposite {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(8px) rotate(-2deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .main-title {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      font-size: 40px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      animation: textGlow 6s ease-in-out infinite;
+    }
+
+    .subtitle-label {
+      font-family: Consolas, 'Courier New', Courier, monospace;
+      font-size: 16px;
+      font-weight: bold;
+      fill: #88ce02; /* GSAP Greenish-yellow */
+    }
+
+    .subtitle-val {
+      font-family: Consolas, 'Courier New', Courier, monospace;
+      font-size: 16px;
+      font-weight: bold;
+      fill: #00f0ff;
+    }
+
+    .cursor {
+      animation: blink 0.8s infinite;
+      fill: #ff007f;
+    }
+
+    .tech-tag {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      fill: #ffffff;
+      fill-opacity: 0.65;
+    }
+
+    .floating-left {
+      animation: floating 6s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    .floating-right {
+      animation: floatOpposite 7s ease-in-out infinite;
+      transform-origin: center;
+    }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="850" height="320" fill="url(#bgGrad)"/>
+  <rect width="850" height="320" fill="url(#grid)"/>
+
+  <!-- Glowing background elements (ambient lighting) -->
+  <circle cx="150" cy="100" r="140" fill="#ff007f" fill-opacity="0.10" filter="url(#glow)">
+    <animate attributeName="cx" values="120;180;120" dur="20s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="80;120;80" dur="15s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="700" cy="220" r="160" fill="#00f0ff" fill-opacity="0.08" filter="url(#glow)">
+    <animate attributeName="cx" values="740;660;740" dur="22s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="240;190;240" dur="17s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Floating Coding Symbols -->
+  <g class="floating-left" style="transform-box: fill-box;">
+    <text x="60" y="165" font-family="'Courier New', Courier, monospace" font-size="44" font-weight="900" fill="#00f0ff" fill-opacity="0.18" filter="url(#glow)">&lt;/&gt;</text>
+  </g>
+  <g class="floating-right" style="transform-box: fill-box;">
+    <text x="740" y="165" font-family="'Courier New', Courier, monospace" font-size="44" font-weight="900" fill="#ff007f" fill-opacity="0.18" filter="url(#glow)">{ }</text>
+  </g>
+
+  <!-- Center Glassmorphism Card -->
+  <rect x="125" y="45" width="600" height="230" rx="24" fill="url(#cardGrad)" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.5" />
+  
+  <!-- Glowing border details (rotating dashed neon border) -->
+  <rect x="125" y="45" width="600" height="230" rx="24" fill="none" stroke="url(#neonGrad)" stroke-width="2" stroke-opacity="0.5" stroke-dasharray="120 710" stroke-linecap="round" style="animation: borderRotate 8s linear infinite;"/>
+
+  <!-- Title / Name (Filled with gradient) -->
+  <text x="425" y="125" text-anchor="middle" fill="url(#neonGrad)" class="main-title">INDRA MAHPUDIN</text>
+
+  <!-- Subtitle Typing Animation Area -->
+  <g transform="translate(100, 0)">
+    <!-- Terminal prompt symbol -->
+    <text x="140" y="176" class="subtitle-label">~/indrampd $</text>
+    
+    <!-- Text 1: Front-end Web Developer -->
+    <text x="250" y="176" class="subtitle-val" clip-path="url(#clip1)">Front-end Web Developer</text>
+    <!-- Cursor 1 -->
+    <rect x="250" y="160" width="8" height="18" class="cursor">
+      <animate attributeName="x" values="250;475;475;250;250;250;250;250;250;250" keyTimes="0;0.06;0.26;0.30;0.31;0.90;0.91;0.95;0.96;1" dur="15s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;1;1;0;0;0;0;0;0;0" keyTimes="0;0.26;0.30;0.31;0.40;0.90;0.91;0.95;0.96;1" dur="15s" repeatCount="indefinite" />
+    </rect>
+
+    <!-- Text 2: GSAP & Webflow Specialist -->
+    <text x="250" y="176" class="subtitle-val" clip-path="url(#clip2)">GSAP &amp; Webflow Specialist</text>
+    <!-- Cursor 2 -->
+    <rect x="250" y="160" width="8" height="18" class="cursor">
+      <animate attributeName="x" values="250;250;250;250;490;490;250;250;250;250" keyTimes="0;0.29;0.30;0.33;0.39;0.59;0.63;0.64;0.95;1" dur="15s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;0;0;1;1;1;0;0;0;0" keyTimes="0;0.29;0.30;0.33;0.59;0.63;0.64;0.80;0.95;1" dur="15s" repeatCount="indefinite" />
+    </rect>
+
+    <!-- Text 3: Creative UI Developer -->
+    <text x="250" y="176" class="subtitle-val" clip-path="url(#clip3)">Creative UI Developer</text>
+    <!-- Cursor 3 -->
+    <rect x="250" y="160" width="8" height="18" class="cursor">
+      <animate attributeName="x" values="250;250;250;250;250;250;250;440;440;250;250" keyTimes="0;0.29;0.30;0.59;0.60;0.62;0.63;0.69;0.89;0.93;1" dur="15s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;0;0;0;0;0;0;1;1;0;0" keyTimes="0;0.29;0.30;0.59;0.60;0.62;0.63;0.69;0.89;0.93;1" dur="15s" repeatCount="indefinite" />
+    </rect>
+  </g>
+
+  <!-- Tags / Skills capsules -->
+  <g transform="translate(245, 215)">
+    <!-- Capsule 1 -->
+    <rect x="0" y="0" width="70" height="24" rx="12" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.1"/>
+    <text x="35" y="16" text-anchor="middle" class="tech-tag">Creative</text>
+
+    <!-- Capsule 2 -->
+    <rect x="80" y="0" width="85" height="24" rx="12" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.1"/>
+    <text x="122.5" y="16" text-anchor="middle" class="tech-tag">Interactive</text>
+
+    <!-- Capsule 3 -->
+    <rect x="175" y="0" width="75" height="24" rx="12" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.1"/>
+    <text x="212.5" y="16" text-anchor="middle" class="tech-tag">Animation</text>
+
+    <!-- Capsule 4 -->
+    <rect x="260" y="0" width="100" height="24" rx="12" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.1"/>
+    <text x="310" y="16" text-anchor="middle" class="tech-tag">Front-End</text>
+  </g>
+
+</svg>
