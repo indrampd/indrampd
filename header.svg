@@ -37,18 +37,18 @@
 
     <!-- Clip Paths for Typing Animations -->
     <clipPath id="clip1">
-      <rect x="250" y="160" width="0" height="30">
+      <rect x="360" y="150" width="0" height="35">
         <animate attributeName="width" values="0;225;225;0;0;0;0;0;0;0" keyTimes="0;0.06;0.26;0.30;0.31;0.90;0.91;0.95;0.96;1" dur="15s" repeatCount="indefinite" />
       </rect>
     </clipPath>
     <clipPath id="clip2">
-      <rect x="250" y="160" width="0" height="30">
-        <animate attributeName="width" values="0;0;0;0;240;240;0;0;0;0" keyTimes="0;0.29;0.30;0.33;0.39;0.59;0.63;0.64;0.95;1" dur="15s" repeatCount="indefinite" />
+      <rect x="360" y="150" width="0" height="35">
+        <animate attributeName="width" values="0;0;0;0;245;245;0;0;0;0" keyTimes="0;0.29;0.30;0.33;0.39;0.59;0.63;0.64;0.95;1" dur="15s" repeatCount="indefinite" />
       </rect>
     </clipPath>
     <clipPath id="clip3">
-      <rect x="250" y="160" width="0" height="30">
-        <animate attributeName="width" values="0;0;0;0;0;0;0;190;190;0;0" keyTimes="0;0.29;0.30;0.59;0.60;0.62;0.63;0.69;0.89;0.93;1" dur="15s" repeatCount="indefinite" />
+      <rect x="360" y="150" width="0" height="35">
+        <animate attributeName="width" values="0;0;0;0;0;0;0;215;215;0;0" keyTimes="0;0.29;0.30;0.59;0.60;0.63;0.64;0.69;0.89;0.93;1" dur="15s" repeatCount="indefinite" />
       </rect>
     </clipPath>
   </defs>
@@ -78,7 +78,7 @@
 
     @keyframes blink {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
+      50% { opacity: 0.2; }
     }
 
     .main-title {
@@ -159,32 +159,29 @@
   <text x="425" y="125" text-anchor="middle" fill="url(#neonGrad)" class="main-title">INDRA MAHPUDIN</text>
 
   <!-- Subtitle Typing Animation Area -->
-  <g transform="translate(100, 0)">
+  <g>
     <!-- Terminal prompt symbol -->
-    <text x="140" y="176" class="subtitle-label">~/indrampd $</text>
+    <text x="235" y="176" class="subtitle-label">~/indrampd $</text>
     
     <!-- Text 1: Front-end Web Developer -->
-    <text x="250" y="176" class="subtitle-val" clip-path="url(#clip1)">Front-end Web Developer</text>
-    <!-- Cursor 1 -->
-    <rect x="250" y="160" width="8" height="18" class="cursor">
-      <animate attributeName="x" values="250;475;475;250;250;250;250;250;250;250" keyTimes="0;0.06;0.26;0.30;0.31;0.90;0.91;0.95;0.96;1" dur="15s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="1;1;1;0;0;0;0;0;0;0" keyTimes="0;0.26;0.30;0.31;0.40;0.90;0.91;0.95;0.96;1" dur="15s" repeatCount="indefinite" />
-    </rect>
+    <text x="360" y="176" class="subtitle-val" clip-path="url(#clip1)">Front-end Web Developer</text>
 
     <!-- Text 2: GSAP & Webflow Specialist -->
-    <text x="250" y="176" class="subtitle-val" clip-path="url(#clip2)">GSAP &amp; Webflow Specialist</text>
-    <!-- Cursor 2 -->
-    <rect x="250" y="160" width="8" height="18" class="cursor">
-      <animate attributeName="x" values="250;250;250;250;490;490;250;250;250;250" keyTimes="0;0.29;0.30;0.33;0.39;0.59;0.63;0.64;0.95;1" dur="15s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0;0;0;1;1;1;0;0;0;0" keyTimes="0;0.29;0.30;0.33;0.59;0.63;0.64;0.80;0.95;1" dur="15s" repeatCount="indefinite" />
-    </rect>
+    <text x="360" y="176" class="subtitle-val" clip-path="url(#clip2)">GSAP &amp; Webflow Specialist</text>
 
     <!-- Text 3: Creative UI Developer -->
-    <text x="250" y="176" class="subtitle-val" clip-path="url(#clip3)">Creative UI Developer</text>
-    <!-- Cursor 3 -->
-    <rect x="250" y="160" width="8" height="18" class="cursor">
-      <animate attributeName="x" values="250;250;250;250;250;250;250;440;440;250;250" keyTimes="0;0.29;0.30;0.59;0.60;0.62;0.63;0.69;0.89;0.93;1" dur="15s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0;0;0;0;0;0;0;1;1;0;0" keyTimes="0;0.29;0.30;0.59;0.60;0.62;0.63;0.69;0.89;0.93;1" dur="15s" repeatCount="indefinite" />
+    <text x="360" y="176" class="subtitle-val" clip-path="url(#clip3)">Creative Web Developer</text>
+
+    <!-- Single Unified Cursor -->
+    <rect x="360" y="160" width="8" height="18" class="cursor">
+      <animate attributeName="x" 
+        values="360;582;582;360;360;360;602;602;360;360;572;572;360;360" 
+        keyTimes="0;0.06;0.26;0.30;0.32;0.33;0.39;0.59;0.63;0.64;0.69;0.89;0.93;1" 
+        dur="15s" repeatCount="indefinite" />
+      <animate attributeName="opacity" 
+        values="1;1;1;0;0;1;1;1;0;1;1;1;0;0" 
+        keyTimes="0;0.06;0.26;0.30;0.325;0.33;0.39;0.59;0.63;0.635;0.69;0.89;0.93;1" 
+        dur="15s" repeatCount="indefinite" />
     </rect>
   </g>
 
